@@ -3,6 +3,8 @@ project(simple_cmake)
 
 set(CMAKE_CXX_STANDARD 11)
 
+set(CMAKE_C_FLAGS "-std=c99")
+
 add_library(sse2 INTERFACE IMPORTED)
 if (MSVC)
     set(CMAKE_INSTALL_PREFIX "c:/software/simple_cmake")
