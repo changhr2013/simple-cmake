@@ -1,3 +1,7 @@
-include_directories("C:/software/simple_cmake/include/hello")
+if (MSVC)
+    include_directories("C:/software/simple_cmake/include/hello")
+else ()
+    include_directories("/usr/local/simple_cmake/include/hello")
+endif ()
 add_executable(main main.c)
 target_link_libraries(main hello)

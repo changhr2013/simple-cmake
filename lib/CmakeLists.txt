@@ -1,7 +1,11 @@
 # 设置要编译的源代码
 set(LIBHELLO_SRC hello.c sm4_ref.h sm4_ref.c sm4.h sm4.c sm4_aesni_x4.h sm4_aesni_x4.c)
 # 设置动态库的生成路径
-set(LIBRARY_OUTPUT_PATH "C:/software/learn_cmake")
+if (MSVC)
+    set(LIBRARY_OUTPUT_PATH "C:/software/simple_cmake_out")
+else ()
+    set(LIBRARY_OUTPUT_PATH "/usr/local/simple_cmake_out")
+endif ()
 # 生成动态库
 add_library(hello SHARED ${LIBHELLO_SRC})
 
